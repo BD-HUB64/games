@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="테트리스">
+<meta name="theme-color" content="#16171a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png">
+<title>테트리스</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="top"><span>독고아재의 추억의 테트리스</span></header>
+  <main id="stage">
+    <div id="field">
+      <div id="bw">
+        <canvas id="board"></canvas>
+        <div id="msg" hidden><div id="msgTitle"></div><div id="msgSub"></div><div class="btns"><button id="msgBtn" class="go"></button><button id="quitBtn" class="go round quit" aria-label="끝내기" hidden><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round"><path d="M7.2 6.8A7.84 7.84 0 1 0 16.8 6.8"/><path d="M12 3.2v8.2"/></svg></button></div></div>
+      </div>
+      <aside id="side">
+        <canvas id="next" width="96" height="96" aria-label="다음 블록"></canvas>
+        <div class="stats">
+          <div><span>점수</span><b id="score">0</b></div>
+          <div><span>단계</span><b id="level">1</b></div>
+          <div><span>줄</span><b id="lines">0</b></div>
+          <div><span>최고점</span><b id="best">0</b></div>
+        </div>
+        <img id="mascot" src="icons/character.png" alt="" width="66" height="66" draggable="false">
+        <button id="pause" class="rb" aria-label="멈춤">
+          <svg class="ic-pause" viewBox="0 0 24 24"><rect x="6.2" y="5.5" width="4.1" height="13" rx="1.6" fill="#fff"/><rect x="13.7" y="5.5" width="4.1" height="13" rx="1.6" fill="#fff"/></svg>
+          <svg class="ic-play" viewBox="0 0 24 24"><path d="M8.5 5.5l10 6.5-10 6.5z" fill="#fff" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </button>
+        <button id="sideQuit" class="rb" aria-label="끝내기">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round"><path d="M7.2 6.8A7.84 7.84 0 1 0 16.8 6.8"/><path d="M12 3.2v8.2"/></svg>
+        </button>
+      </aside>
+    </div>
+  </main>
+  <footer id="pad">
+    <button data-k="left" aria-label="왼쪽"><svg viewBox="0 0 24 24"><path d="M16 4 6 12l10 8z" fill="currentColor"/></svg></button>
+    <button data-k="right" aria-label="오른쪽"><svg viewBox="0 0 24 24"><path d="M8 4l10 8-10 8z" fill="currentColor"/></svg></button>
+    <button data-k="drop" class="drop" aria-label="한번에 내리기"><svg viewBox="0 0 24 24"><path d="M4 4l8 10 8-10z" fill="currentColor"/><rect x="3" y="18" width="18" height="3.4" rx="1.7" fill="currentColor"/></svg></button>
+    <button data-k="rot" class="rot" aria-label="돌리기"><svg viewBox="0 0 24 24"><path d="M17.75 16.82A7.5 7.5 0 1 1 15.75 5.5" fill="none" stroke="currentColor" stroke-width="3.6"/><path d="M20.1 8.1L17.2 1.1 12.6 9z" fill="currentColor"/></svg></button>
+  </footer>
+</div>
+<script src="tetris.js"></script>
+</body>
+</html>

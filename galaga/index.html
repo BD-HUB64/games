@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="갤로그">
+<meta name="theme-color" content="#050610">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png">
+<title>독고아재의 추억의 갤로그</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="top">
+    <button id="pause" class="rb" aria-label="멈춤/계속"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="5" height="16" rx="1.5" fill="#fff"/><rect x="14" y="4" width="5" height="16" rx="1.5" fill="#fff"/></svg></button>
+    <span class="ttl"><img src="icons/character.png" alt="" width="26" height="26"><b>독고아재의 추억의 갤로그</b></span>
+    <button id="quit" class="rb" aria-label="끝내기"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M12 3v8"/><path d="M6.6 6.8a8 8 0 1 0 10.8 0"/></svg></button>
+  </header>
+  <main id="stage"><canvas id="c" aria-label="게임 화면"></canvas></main>
+  <footer id="pad">
+    <div id="slider" aria-label="좌우 이동 슬라이더"><div id="fill"></div><div id="thumb"><i></i><i></i><i></i></div></div>
+    <button data-k="fire" class="fire" aria-label="쏘기"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="#1c1209"/><path d="M11 18v-7h7M30 11h7v7M37 30v7h-7M18 37h-7v-7" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="9.5" fill="none" stroke="#fff" stroke-width="2.4"/><circle cx="24" cy="24" r="5" fill="none" stroke="#ff7a3d" stroke-width="2.4"/><circle cx="24" cy="24" r="1.8" fill="#fff"/><path d="M24 9v6M24 33v6M9 24h6M33 24h6" stroke="#ff7a3d" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+  </footer>
+</div>
+<script src="galaga.js"></script>
+<script>if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(() => {});</script>
+</body>
+</html>
