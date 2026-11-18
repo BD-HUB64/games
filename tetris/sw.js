@@ -1,5 +1,5 @@
 // 한 번 열면 폰에 저장해 두어, 인터넷이 없어도 열린다 (https 주소에서만 동작)
-const CACHE = 'tetris-v21';
+const CACHE = 'tetris-v22';
 const FILES = ['./', 'index.html', 'style.css', 'tetris.js', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png', 'icons/character.png'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));

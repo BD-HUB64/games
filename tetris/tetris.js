@@ -81,6 +81,9 @@ function fit() {
   cell = Math.max(10, Math.floor(Math.min((st.width - 16 - sideW) / W, (st.height - 12) / H)));
   cv.style.width = cell * W + 'px'; cv.style.height = cell * H + 'px';
   cv.width = cell * W * dpr; cv.height = cell * H * dpr;
+  // 오른쪽 열이 게임판보다 길면(큰 글씨 설정 등) 아래 단추와 겹치므로 단계별로 줄인다
+  const sd = $('side'); sd.classList.remove('c1', 'c2', 'c3');
+  for (const c of ['c1', 'c2', 'c3']) { if (sd.scrollHeight <= cell * H + 1) break; sd.classList.add(c); }
 }
 function block(c, x, y, s, color, alpha) {
   c.globalAlpha = alpha == null ? 1 : alpha;
